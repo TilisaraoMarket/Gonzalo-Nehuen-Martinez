@@ -427,18 +427,18 @@
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Reserva tu Experiencia</h2>
             <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg" data-aos="fade-up">
-                <form class="space-y-6">
+                <form action="https://formspree.io/f/xjvqgwnj" method="POST" class="space-y-6">
                     <div>
                         <label class="block mb-2">Nombre Completo</label>
-                        <input type="text" class="w-full p-3 bg-gray-700 rounded-lg" required>
+                        <input type="text" name="nombre" class="w-full p-3 bg-gray-700 rounded-lg" required>
                     </div>
                     <div>
                         <label class="block mb-2">Email</label>
-                        <input type="email" class="w-full p-3 bg-gray-700 rounded-lg" required>
+                        <input type="email" name="email" class="w-full p-3 bg-gray-700 rounded-lg" required>
                     </div>
                     <div>
                         <label class="block mb-2">Experiencia</label>
-                        <select class="w-full p-3 bg-gray-700 rounded-lg" required>
+                        <select name="experiencia" class="w-full p-3 bg-gray-700 rounded-lg" required>
                             <option value="">Selecciona una experiencia</option>
                             <option value="area51">Área 51 - Nevada</option>
                             <option value="nazca">Líneas de Nazca - Perú</option>
@@ -447,12 +447,14 @@
                     </div>
                     <div>
                         <label class="block mb-2">Fecha Preferida</label>
-                        <input type="date" class="w-full p-3 bg-gray-700 rounded-lg" required>
+                        <input type="date" name="fecha" class="w-full p-3 bg-gray-700 rounded-lg" required>
                     </div>
                     <div>
                         <label class="block mb-2">Mensaje</label>
-                        <textarea class="w-full p-3 bg-gray-700 rounded-lg h-32" required></textarea>
+                        <textarea name="mensaje" class="w-full p-3 bg-gray-700 rounded-lg h-32" required></textarea>
                     </div>
+                    <!-- Campo oculto anti-spam -->
+                    <input type="text" name="_gotcha" style="display:none" />
                     <button type="submit" 
                             class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition duration-300">
                         Enviar Reserva
