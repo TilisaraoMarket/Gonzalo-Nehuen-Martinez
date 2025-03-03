@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gonzalo Nehuén Martínez - Guía de Turismo Ufológico</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- AOS para animaciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navegación -->
+    <nav class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg fixed w-full z-10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-bold gradient-text">GNM Experiencias UFO</div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="hover:text-green-400 transition duration-300">Inicio</a>
+                    <a href="#sobre-mi" class="hover:text-green-400 transition duration-300">Sobre Mí</a>
+                    <a href="#experiencias" class="hover:text-green-400 transition duration-300">Experiencias</a>
+                    <a href="#galeria" class="hover:text-green-400 transition duration-300">Galería</a>
+                    <a href="#testimonios" class="hover:text-green-400 transition duration-300">Testimonios</a>
+                    <a href="#reservas" class="hover:text-green-400 transition duration-300">Reservas</a>
+                    
+                    <!-- Redes Sociales en Nav -->
+                    <div class="flex items-center space-x-4">
+                        <a href="https://facebook.com/GNMExperiencias" target="_blank" 
+                           class="text-gray-400 hover:text-blue-500 transition duration-300">
+                            <i class="ph-facebook-logo text-2xl"></i>
+                        </a>
+                        <a href="https://instagram.com/GNMExperiencias" target="_blank" 
+                           class="text-gray-400 hover:text-pink-500 transition duration-300">
+                            <i class="ph-instagram-logo text-2xl"></i>
+                        </a>
+                        <a href="https://twitter.com/GNMExperiencias" target="_blank" 
+                           class="text-gray-400 hover:text-blue-400 transition duration-300">
+                            <i class="ph-twitter-logo text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="h-screen flex items-center justify-center bg-cover bg-center parallax" 
+             style="background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+        <div class="bg-black bg-opacity-50 w-full h-full flex items-center">
+            <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+                <h1 class="text-6xl md:text-7xl font-bold mb-8 gradient-text">Descubre los Misterios del Universo</h1>
+                <p class="text-2xl mb-8">Con Gonzalo Nehuén Martínez, tu guía en el mundo de la ufología</p>
+                <a href="#reservas" 
+                   class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg text-lg transition duration-300 transform hover:scale-105 inline-block">
+                    Reserva tu Experiencia
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Sobre Mí</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="foto de gonzalo.png" alt="Gonzalo Neuhen Martinez" class="rounded-lg shadow-xl">
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-4">Gonzalo Nehuén Martínez</h3>
+                    <p class="text-gray-300 mb-6">
+                        Soy un guía turístico especializado en ufología y lugares enigmáticos del mundo. 
+                        Con más de 10 años de experiencia, he tenido múltiples encuentros cercanos y he guiado 
+                        a cientos de personas en búsqueda de experiencias extraordinarias.
+                    </p>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="ph-check-circle-fill text-green-500 mr-2"></i>
+                            Contactado y experto en fenómenos OVNI
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ph-check-circle-fill text-green-500 mr-2"></i>
+                            Guía certificado internacional
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ph-check-circle-fill text-green-500 mr-2"></i>
+                            Experiencia en más de 30 países
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencias -->
+    <section id="experiencias" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Experiencias Únicas</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Experiencia 1 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden hover-scale" data-aos="fade-up">
+                    <img src="/api/placeholder/400/300" alt="Área 51" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Área 51 - Nevada</h3>
+                        <p class="text-gray-300 mb-4">Explora los alrededores de la base más misteriosa del mundo.</p>
+                        <p class="text-green-500 font-bold">Desde $1,999 USD</p>
+                    </div>
+                </div>
+                <!-- Experiencia 2 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden hover-scale" data-aos="fade-up" data-aos-delay="100">
+                    <img src="/api/placeholder/400/300" alt="Nazca" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Líneas de Nazca - Perú</h3>
+                        <p class="text-gray-300 mb-4">Sobrevuela las enigmáticas líneas y descubre su misterio.</p>
+                        <p class="text-green-500 font-bold">Desde $2,499 USD</p>
+                    </div>
+                </div>
+                <!-- Experiencia 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden hover-scale" data-aos="fade-up" data-aos-delay="200">
+                    <img src="/api/placeholder/400/300" alt="Teotihuacán" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Teotihuacán - México</h3>
+                        <p class="text-gray-300 mb-4">Conecta con energías ancestrales en la Ciudad de los Dioses.</p>
+                        <p class="text-green-500 font-bold">Desde $1,799 USD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+<section id="galeria" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Galería de Experiencias</h2>
+        
+        <!-- Grid de imágenes -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Imagen 1 -->
+            <a href="https://images.unsplash.com/photo-1506318137071-a8e063b4bec0" 
+               data-lightbox="galeria" 
+               data-title="Avistamiento OVNI en el Área 51"
+               class="hover-scale block" 
+               data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=400&h=300&fit=crop" 
+                     alt="Avistamiento OVNI" 
+                     class="rounded-lg shadow-xl w-full h-64 object-cover">
+            </a>
+
+            <!-- Imagen 2 -->
+            <a href="https://images.unsplash.com/photo-1465101162946-4377e57745c3" 
+               data-lightbox="galeria" 
+               data-title="Líneas de Nazca desde el aire"
+               class="hover-scale block" 
+               data-aos="fade-up" 
+               data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=400&h=300&fit=crop" 
+                     alt="Líneas de Nazca" 
+                     class="rounded-lg shadow-xl w-full h-64 object-cover">
+            </a>
+
+            <!-- Imagen 3 -->
+            <a href="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45" 
+               data-lightbox="galeria" 
+               data-title="Teotihuacán al atardecer"
+               class="hover-scale block" 
+               data-aos="fade-up" 
+               data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=400&h=300&fit=crop" 
+                     alt="Teotihuacán" 
+                     class="rounded-lg shadow-xl w-full h-64 object-cover">
+            </a>
+
+            <!-- Imagen 4 -->
+            <a href="https://images.unsplash.com/photo-1451187580459-43490279c0fa" 
+               data-lightbox="galeria" 
+               data-title="Fenómeno celeste nocturno"
+               class="hover-scale block" 
+               data-aos="fade-up" 
+               data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop" 
+                     alt="Fenómeno celeste" 
+                     class="rounded-lg shadow-xl w-full h-64 object-cover">
+            </a>
+
+            <!-- Imagen 5 -->
+            <a href="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a" 
+               data-lightbox="galeria" 
+               data-title="Aurora Boreal en Islandia"
+               class="hover-scale block" 
+               data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&h=300&fit=crop" 
+                     alt="Aurora Boreal" 
+                     class="rounded-lg shadow-xl w-full h-64 object-cover">
+            </a>
+
+            <!-- Imagen 6 -->
+            <a href="https://images.unsplash.com/photo-1543722530-d2c3201371e7" 
+               data-lightbox="galeria" 
+               data-title="Círculos en los cultivos"
+               class="hover-scale block" 
+               data-aos="fade-up" 
+               data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=400&h=300&fit=crop" 
+                     alt="Círculos en los cultivos" 
+                     class="rounded-lg shadow-xl w-full h-64 object-cover">
+            </a>
+
+            <!-- Imagen 7 -->
+            <a href="https://images.unsplash.com/photo-1475274047050-1d0c0975c63e" 
+               data-lightbox="galeria" 
+               data-title="Observatorio astronómico"
+               class="hover-scale block" 
+               data-aos="fade-up" 
+               data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=400&h=300&fit=crop" 
+                     alt="Observatorio" 
+                     class="rounded-lg shadow-xl w-full h-64 object-cover">
+            </a>
+
+            <!-- Imagen 8 -->
+            <a href="https://images.unsplash.com/photo-1518066000714-58c45f1a2c0a" 
+               data-lightbox="galeria" 
+               data-title="Desierto nocturno"
+               class="hover-scale block" 
+               data-aos="fade-up" 
+               data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1518066000714-58c45f1a2c0a?w=400&h=300&fit=crop" 
+                     alt="Desierto nocturno" 
+                     class="rounded-lg shadow-xl w-full h-64 object-cover">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonios -->
+<section id="testimonios" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Testimonios</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Testimonio 1 -->
+            <div class="bg-gray-800 p-6 rounded-lg" data-aos="fade-up">
+                <div class="text-green-500 text-4xl mb-4">"</div>
+                <p class="text-gray-300 mb-6">Una experiencia única e inolvidable. Gonzalo es un guía excepcional que conoce cada detalle de los lugares que visitamos. Su conocimiento sobre los fenómenos OVNI es impresionante.</p>
+                <div class="flex items-center">
+                    <img src="https://i.pravatar.cc/150?img=1" 
+                         alt="María González" 
+                         class="rounded-full w-12 h-12 mr-4">
+                    <div>
+                        <div class="font-bold">María González</div>
+                        <div class="text-green-500">Argentina</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div class="bg-gray-800 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-green-500 text-4xl mb-4">"</div>
+                <p class="text-gray-300 mb-6">Increíble tour por el Área 51. Las explicaciones de Gonzalo sobre los avistamientos históricos y las teorías actuales son fascinantes. ¡Definitivamente volveré!</p>
+                <div class="flex items-center">
+                    <img src="https://i.pravatar.cc/150?img=2" 
+                         alt="John Smith" 
+                         class="rounded-full w-12 h-12 mr-4">
+                    <div>
+                        <div class="font-bold">John Smith</div>
+                        <div class="text-green-500">Estados Unidos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div class="bg-gray-800 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-green-500 text-4xl mb-4">"</div>
+                <p class="text-gray-300 mb-6">El viaje a las líneas de Nazca superó todas mis expectativas. La perspectiva de Gonzalo sobre la conexión entre las antiguas civilizaciones y los visitantes extraterrestres es fascinante.</p>
+                <div class="flex items-center">
+                    <img src="https://i.pravatar.cc/150?img=3" 
+                         alt="Ana Martínez" 
+                         class="rounded-full w-12 h-12 mr-4">
+                    <div>
+                        <div class="font-bold">Ana Martínez</div>
+                        <div class="text-green-500">México</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de más testimonios -->
+        <div class="text-center mt-12">
+            <button class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg transition duration-300">
+                Ver Más Testimonios
+            </button>
+        </div>
+    </div>
+</section>
+
+    <!-- Redes Sociales -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Síguenos en Redes Sociales</h2>
+            
+            <!-- Grid de redes sociales -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <!-- Facebook -->
+                <a href="https://facebook.com/GNMExperiencias" target="_blank" 
+                   class="flex flex-col items-center p-6 bg-gray-900 rounded-lg hover:transform hover:scale-105 transition duration-300"
+                   data-aos="fade-up">
+                    <i class="ph-facebook-logo text-5xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold mb-2">Facebook</h3>
+                    <p class="text-sm text-gray-400">@GNMExperiencias</p>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/GNMExperiencias" target="_blank" 
+                   class="flex flex-col items-center p-6 bg-gray-900 rounded-lg hover:transform hover:scale-105 transition duration-300"
+                   data-aos="fade-up" data-aos-delay="100">
+                    <i class="ph-instagram-logo text-5xl text-pink-500 mb-4"></i>
+                    <h3 class="font-bold mb-2">Instagram</h3>
+                    <p class="text-sm text-gray-400">@GNMExperiencias</p>
+                </a>
+
+                <!-- Twitter -->
+                <a href="https://twitter.com/GNMExperiencias" target="_blank" 
+                   class="flex flex-col items-center p-6 bg-gray-900 rounded-lg hover:transform hover:scale-105 transition duration-300"
+                   data-aos="fade-up" data-aos-delay="200">
+                    <i class="ph-twitter-logo text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="font-bold mb-2">Twitter</h3>
+                    <p class="text-sm text-gray-400">@GNMExperiencias</p>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://youtube.com/GNMExperiencias" target="_blank" 
+                   class="flex flex-col items-center p-6 bg-gray-900 rounded-lg hover:transform hover:scale-105 transition duration-300"
+                   data-aos="fade-up" data-aos-delay="300">
+                    <i class="ph-youtube-logo text-5xl text-red-500 mb-4"></i>
+                    <h3 class="font-bold mb-2">YouTube</h3>
+                    <p class="text-sm text-gray-400">GNM Experiencias</p>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@GNMExperiencias" target="_blank" 
+                   class="flex flex-col items-center p-6 bg-gray-900 rounded-lg hover:transform hover:scale-105 transition duration-300"
+                   data-aos="fade-up" data-aos-delay="400">
+                    <i class="ph-tiktok-logo text-5xl text-purple-500 mb-4"></i>
+                    <h3 class="font-bold mb-2">TikTok</h3>
+                    <p class="text-sm text-gray-400">@GNMExperiencias</p>
+                </a>
+            </div>
+
+            <!-- Feed de Instagram -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-8 text-center">Últimas Publicaciones</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Fotos de Instagram -->
+                    <div class="aspect-square bg-gray-900 rounded-lg overflow-hidden hover:opacity-75 transition duration-300">
+                        <img src="/api/placeholder/300/300" alt="Instagram post" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Repetir para más fotos -->
+                </div>
+            </div>
+
+            <!-- Botones de Compartir -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold mb-8">Comparte Nuestra Página</h3>
+                <div class="flex justify-center space-x-4">
+                    <!-- Botón de Facebook -->
+                    <button onclick="shareOnFacebook()" 
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg flex items-center transition duration-300">
+                        <i class="ph-facebook-logo mr-2"></i>
+                        Compartir
+                    </button>
+
+                    <!-- Botón de Twitter -->
+                    <button onclick="shareOnTwitter()" 
+                            class="bg-blue-400 hover:bg-blue-500 text-white px-6 py-3 rounded-lg flex items-center transition duration-300">
+                        <i class="ph-twitter-logo mr-2"></i>
+                        Tweet
+                    </button>
+
+                    <!-- Botón de WhatsApp -->
+                    <button onclick="shareOnWhatsApp()" 
+                            class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg flex items-center transition duration-300">
+                        <i class="ph-whatsapp-logo mr-2"></i>
+                        Compartir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Reservas -->
+    <section id="reservas" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Reserva tu Experiencia</h2>
+            <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg" data-aos="fade-up">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block mb-2">Nombre Completo</label>
+                        <input type="text" class="w-full p-3 bg-gray-700 rounded-lg" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Email</label>
+                        <input type="email" class="w-full p-3 bg-gray-700 rounded-lg" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Experiencia</label>
+                        <select class="w-full p-3 bg-gray-700 rounded-lg" required>
+                            <option value="">Selecciona una experiencia</option>
+                            <option value="area51">Área 51 - Nevada</option>
+                            <option value="nazca">Líneas de Nazca - Perú</option>
+                            <option value="teotihuacan">Teotihuacán - México</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Fecha Preferida</label>
+                        <input type="date" class="w-full p-3 bg-gray-700 rounded-lg" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Mensaje</label>
+                        <textarea class="w-full p-3 bg-gray-700 rounded-lg h-32" required></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg transition duration-300">
+                        Enviar Reserva
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">GNM Experiencias UFO</h3>
+                    <p class="text-gray-400">Descubre los misterios del universo con nosotros.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#inicio" class="hover:text-green-500 transition duration-300">Inicio</a></li>
+                        <li><a href="#experiencias" class="hover:text-green-500 transition duration-300">Experiencias</a></li>
+                        <li><a href="#reservas" class="hover:text-green-500 transition duration-300">Reservas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Email: info@gnmexperiencias.com</li>
+                        <li>Tel: +1 234 567 890</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Síguenos</h4>
+                    <div class="grid grid-cols-3 gap-4">
+                        <a href="https://facebook.com/GNMExperiencias" target="_blank" 
+                           class="text-gray-400 hover:text-blue-500 transition duration-300">
+                            <i class="ph-facebook-logo text-2xl"></i>
+                        </a>
+                        <a href="https://instagram.com/GNMExperiencias" target="_blank" 
+                           class="text-gray-400 hover:text-pink-500 transition duration-300">
+                            <i class="ph-instagram-logo text-2xl"></i>
+                        </a>
+                        <a href="https://twitter.com/GNMExperiencias" target="_blank" 
+                           class="text-gray-400 hover:text-blue-400 transition duration-300">
+                            <i class="ph-twitter-logo text-2xl"></i>
+                        </a>
+                        <a href="https://youtube.com/GNMExperiencias" target="_blank" 
+                           class="text-gray-400 hover:text-red-500 transition duration-300">
+                            <i class="ph-youtube-logo text-2xl"></i>
+                        </a>
+                        <a href="https://tiktok.com/@GNMExperiencias" target="_blank" 
+                           class="text-gray-400 hover:text-purple-500 transition duration-300">
+                            <i class="ph-tiktok-logo text-2xl"></i>
+                        </a>
+                        <a href="https://wa.me/1234567890" target="_blank" 
+                           class="text-gray-400 hover:text-green-500 transition duration-300">
+                            <i class="ph-whatsapp-logo text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2024 Gonzalo Nehuén Martínez - Experiencias UFO. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Funciones para compartir en redes sociales
+        function shareOnFacebook() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 
+                       '_blank');
+        }
+
+        function shareOnTwitter() {
+            const text = "¡Descubre los misterios del universo con GNM Experiencias! 🛸✨";
+            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + 
+                       '&url=' + encodeURIComponent(window.location.href), 
+                       '_blank');
+        }
+
+        function shareOnWhatsApp() {
+            const text = "¡Mira esta increíble página de experiencias UFO! 🛸✨";
+            window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + window.location.href), 
+                       '_blank');
+        }
+    </script>
+</body>
+</html>
